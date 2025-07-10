@@ -1,7 +1,8 @@
 :root {
   --text-color: #FFF;
   --background-color: black;
-  --secondary-text-opacity: 0.6;
+  --secondary-text-opacity: 0.75;
+  --tertiary-text-opacity: 0.55;
 
   --margin: 4rem;
 }
@@ -39,7 +40,7 @@ header .left img {
   margin-bottom: 4px;
 }
 header .left span {
-  opacity: var(--secondary-text-opacity);
+  opacity: var(--tertiary-text-opacity);
 }
 
 main {

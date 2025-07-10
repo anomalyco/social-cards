@@ -1,7 +1,8 @@
 :root {
   --text-color: #FFF;
   --background-color: black;
-  --secondary-text-opacity: 0.6;
+  --secondary-text-opacity: 0.75;
+  --tertiary-text-opacity: 0.55;
 
   --margin: 4rem;
 }
@@ -39,12 +40,12 @@ header .left img {
   margin-bottom: 4px;
 }
 header .left span {
-  opacity: var(--secondary-text-opacity);
+  opacity: var(--tertiary-text-opacity);
 }
 header .right {
   position: relative;
   bottom: 4px;
-  opacity: var(--secondary-text-opacity);
+  opacity: var(--tertiary-text-opacity);
   text-transform: uppercase;
 }
 
@@ -76,9 +77,12 @@ main .stats p {
   align-items: flex-start;
   gap: 0.75rem;
 }
+main .stats .value {
+  opacity: var(--secondary-text-opacity);
+}
 main .stats label {
   display: inline-block;
   font-weight: 600;
   text-transform: uppercase;
-  opacity: var(--secondary-text-opacity);
+  opacity: var(--tertiary-text-opacity);
 }

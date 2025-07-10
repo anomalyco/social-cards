@@ -24,7 +24,7 @@
       const params = Object.fromEntries(urlSearchParams.entries());
 
       document.getElementById("title").innerHTML = params.title;
-      document.getElementById("desc").innerHTML = params.desc;
+      document.getElementById("desc").innerHTML = params.desc || "";
     </script>
   </body>
 </html>
