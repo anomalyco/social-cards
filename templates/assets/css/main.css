@@ -1,24 +1,29 @@
 :root {
-  --text-color: #FFFBF9;
+  --text-color: #fffbf9;
 
-  --accent-color: #E27152;
-  --brand-color: #395C6B;
+  --accent-color: #e27152;
+  --brand-color: #395c6b;
 }
 
 body {
   background:
-    radial-gradient(49% 81% at 45% 47%, #FFE20312 0%, #073AFF00 100%),
-    radial-gradient(113% 91% at 17% -2%, #FF5A00FF 1%, #FF000000 99%),
-    radial-gradient(142% 91% at 83% 7%, #E49079FF 1%, #FF000000 99%),
-    radial-gradient(142% 91% at -6% 74%, #DA532EFF 1%, #FF000000 99%),
-    radial-gradient(142% 91% at 111% 84%, #E27152FF 0%, #F33A07FF 100%);
+    radial-gradient(49% 81% at 45% 47%, #ffe20312 0%, #073aff00 100%),
+    radial-gradient(113% 91% at 17% -2%, #ff5a00ff 1%, #ff000000 99%),
+    radial-gradient(142% 91% at 83% 7%, #e49079ff 1%, #ff000000 99%),
+    radial-gradient(142% 91% at -6% 74%, #da532eff 1%, #ff000000 99%),
+    radial-gradient(142% 91% at 111% 84%, #e27152ff 0%, #f33a07ff 100%);
   color: var(--text-color);
   overflow: hidden;
   position: relative;
   padding: 60px;
 }
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Roboto Slab", serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto Slab", "Noto Sans CJK SC", serif;
   font-weight: 400;
 }
 
@@ -37,7 +42,7 @@ span.section:before {
 }
 span.section {
   margin-left: 20px;
-  font-family: "Source Sans Pro";
+  font-family: "Source Sans Pro", "Noto Sans CJK SC", sans-serif;
   font-size: 48px;
   line-height: 49px;
   vertical-align: top;
@@ -47,7 +52,7 @@ a {
   margin-top: 60px;
   padding: 19px 36px;
   text-transform: uppercase;
-  font-family: "Source Sans Pro";
+  font-family: "Source Sans Pro", "Noto Sans CJK SC", sans-serif;
   display: inline-block;
   font-size: 32px;
   font-weight: 700;

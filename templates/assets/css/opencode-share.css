@@ -1,5 +1,5 @@
 :root {
-  --text-color: #FFF;
+  --text-color: #fff;
   --background-color: black;
   --secondary-text-opacity: 0.75;
   --tertiary-text-opacity: 0.55;
@@ -9,9 +9,14 @@
 body {
   background: var(--background-color);
   color: var(--text-color);
-  font-family: "SF Mono", monospace;
+  font-family: "SF Mono", "Noto Sans CJK SC", monospace;
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 600;
   letter-spacing: -1px;
 }

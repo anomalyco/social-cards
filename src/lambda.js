@@ -54,8 +54,8 @@ export async function handler(event) {
   await page.goto(
     `file:${path.join(
       process.cwd(),
-      `templates/${template}.html`
-    )}?title=${title}&${options}`
+      `templates/${template}.html`,
+    )}?title=${encodeURIComponent(title)}${options ? "&" + options : ""}`,
   );
 
   // Wait for page to complete loading
@@ -88,7 +88,13 @@ function parseTitle(file) {
 
   const buffer = Buffer.from(encodedTitle, "base64");
 
-  return decodeURIComponent(buffer.toString("ascii"));
+  const decoded = buffer.toString("utf8");
+
+  try {
+    return decodeURIComponent(decoded);
+  } catch {
+    return decoded;
+  }
 }
 
 /**
