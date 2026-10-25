@@ -23,8 +23,8 @@
       const urlSearchParams = new URLSearchParams(window.location.search);
       const params = Object.fromEntries(urlSearchParams.entries());
 
-      document.getElementById("title").innerHTML = params.title;
-      document.getElementById("desc").innerHTML = params.desc || "";
+      document.getElementById("title").textContent = params.title;
+      document.getElementById("desc").textContent = params.desc || "";
     </script>
   </body>
 </html>

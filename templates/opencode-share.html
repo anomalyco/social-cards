@@ -32,10 +32,10 @@
       const urlSearchParams = new URLSearchParams(window.location.search);
       const params = Object.fromEntries(urlSearchParams.entries());
 
-      document.getElementById("title").innerHTML = params.title;
-      document.getElementById("version").innerHTML = params.version;
-      document.getElementById("model").innerHTML = params.model;
-      document.getElementById("id").innerHTML = params.id;
+      document.getElementById("title").textContent = params.title;
+      document.getElementById("version").textContent = params.version;
+      document.getElementById("model").textContent = params.model;
+      document.getElementById("id").textContent = params.id;
     </script>
   </body>
 </html>

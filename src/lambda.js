@@ -1,3 +1,4 @@
+import fs from "fs";
 import path from "path";
 import { S3 } from "aws-sdk";
 import puppeteer from "puppeteer-core";
@@ -13,13 +14,30 @@ const YOUR_LOCAL_CHROMIUM_PATH =
   "/tmp/localChromium/chromium/mac_arm-1471750/chrome-mac/Chromium.app/Contents/MacOS/Chromium";
 //"/tmp/localChromium/chromium/mac-1165945/chrome-mac/Chromium.app/Contents/MacOS/Chromium";
 
+// Only these template files can be rendered; the path segment must not reach
+// anything else on the filesystem.
+const templates = new Set(
+  fs
+    .readdirSync(path.join(process.cwd(), "templates"))
+    .filter((name) => name.endsWith(".html"))
+    .map((name) => name.slice(0, -".html".length)),
+);
+
+// Chromium on Lambda has to run without its sandbox, but the templates don't
+// need cross-origin access, so keep same-origin policy on.
+const launchArgs = chromium.args.filter(
+  (arg) =>
+    arg !== "--disable-web-security" &&
+    arg !== "--allow-running-insecure-content",
+);
+
 export async function handler(event) {
   const { file, template } = event.pathParameters;
 
   const title = parseTitle(file);
 
   // Check if it's a valid request
-  if (file === null) {
+  if (title === null || !templates.has(template)) {
     return createErrorResponse();
   }
 
@@ -35,7 +53,7 @@ export async function handler(event) {
   }
 
   const browser = await puppeteer.launch({
-    args: chromium.args,
+    args: launchArgs,
     defaultViewport: chromium.defaultViewport,
     executablePath: process.env.IS_LOCAL
       ? YOUR_LOCAL_CHROMIUM_PATH
