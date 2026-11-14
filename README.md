@@ -1,4 +1,4 @@
-# Serverless Social Cards [![Seed Status](https://api.seed.run/anomaly/social-cards/stages/main/build_badge)](https://console.seed.run/anomaly/social-cards)
+# Serverless Social Cards [![Seed Status](https://api.seed.run/anomaly/social-cards/stages/main/build_badge)](https://console.seed.run/anomaly/social-cards) <a href="https://opencode.ai"><picture><source media="(prefers-color-scheme: dark)" srcset="https://opencode.ai/brand/badges/opencode-built-with-g-dark-20.svg"><img alt="Built with OpenCode" src="https://opencode.ai/brand/badges/opencode-built-with-g-light-20.svg" height="20" /></picture></a>
 
 A serverless app created with [SST](https://github.com/sst/sst) that dynamically generates social share or Open Graph (OG) images.
 
